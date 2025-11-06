@@ -21,7 +21,7 @@ This repository contains the code and analysis for the Solar Data Discovery Chal
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.11
 - Git
 - Virtual environment (venv or conda)
 
@@ -29,7 +29,7 @@ This repository contains the code and analysis for the Solar Data Discovery Chal
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/solar-challenge-week1.git
+   git clone https://github.com/bettey-k/solar-challenge-week1.git
    cd solar-challenge-week1
    ```
 
@@ -46,7 +46,7 @@ This repository contains the code and analysis for the Solar Data Discovery Chal
 
    **Using conda:**
    ```bash
-   conda create -n solar-env python=3.9
+   conda create -n solar-env python=3
    conda activate solar-env
    ```
 
@@ -116,4 +116,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 
 - [10 Academy](https://www.10academy.org/) for providing this challenge
-- [Solar Radiation Measurement Data](https://www.renewables.ninja/) for the dataset
+- Solar Radiation Measurement Data (https://www.renewables.ninja/)for the dataset
