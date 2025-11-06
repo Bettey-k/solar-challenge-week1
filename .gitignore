@@ -60,3 +60,14 @@ data/
 *.feather
 *.h5
 *.hdf5
+# Data files
+data/*
+!data/.gitkeep
+
+# Output files
+output/*
+!output/.gitkeep
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
