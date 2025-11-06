@@ -59,4 +59,4 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}  # Token from repository secrets
         file: ./coverage.xml  # Coverage report file
-        fail_ci_if_error: false  # Don't fail the build if upload fails
+        fail_ci_if_error: false 
