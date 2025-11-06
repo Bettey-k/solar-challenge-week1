@@ -31,6 +31,7 @@ jobs:
     # Step 4: Run tests with coverage
     - name: Run tests with coverage
       run: |
+        export PYTHONPATH=$PYTHONPATH:$(pwd)
         pytest tests/ --cov=src --cov-report=xml --cov-fail-under=0 -v
         coverage report
 
