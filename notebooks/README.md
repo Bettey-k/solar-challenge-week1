@@ -1,4 +1,4 @@
-# 🧠 Notebooks – Solar Challenge Week 1
+#  Notebooks – Solar Challenge Week 1
 
 This folder contains all Jupyter notebooks created for **Task 2: Data Profiling, Cleaning, and Exploratory Data Analysis (EDA)**.  
 Each notebook focuses on one country's solar dataset and follows the same analysis structure defined in the project rubric.
@@ -15,7 +15,7 @@ Each notebook focuses on one country's solar dataset and follows the same analys
 
 ---
 
-## 🧩 Standard EDA Workflow
+##  Standard EDA Workflow
 
 Each notebook follows these steps:
 
@@ -44,12 +44,10 @@ Each notebook follows these steps:
 6. **Cleaning Impact**
    - Compare average `ModA` & `ModB` before and after cleaning events
 
-7. **Insights Summary**
-   - Markdown cell summarizing key patterns and findings
 
----
 
-## 🧾 Notes
+
+##  Notes
 
 - Cleaned datasets are saved locally in `data/<country>_clean.csv` but **not committed** to GitHub (as specified in `.gitignore`).
 - Each notebook can be executed independently after installing requirements with:
