@@ -1,9 +1,15 @@
-# Python
+# ==========================================
+# PYTHON & PROJECT CONFIG
+# ==========================================
+
+# Python cache and compiled files
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+
+# Build and packaging
 build/
 develop-eggs/
 dist/
@@ -20,54 +26,79 @@ wheels/
 .installed.cfg
 *.egg
 
-# Virtual Environment
-.venv
-env/
+# ==========================================
+# VIRTUAL ENVIRONMENTS
+# ==========================================
+.venv/
 venv/
+env/
 ENV/
 
-# IDE
+# ==========================================
+# IDE / OS FILES
+# ==========================================
 .vscode/*
 !.vscode/settings.json
 .idea/
 .DS_Store
 
-# Jupyter Notebook
-.ipynb_checkpoints
-*.ipynb
+# ==========================================
+# JUPYTER NOTEBOOKS
+# ==========================================
+# ✅ Keep notebooks visible but ignore checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
 
-# Data
+# ==========================================
+# DATA FILES (Keep Local Only)
+# ==========================================
+# Hide all raw and cleaned data
+data/
+!data/.gitkeep
+
+# Common data formats
 *.csv
 *.json
 *.xlsx
+*.xls
 *.db
 *.sqlite
-
-# Logs and databases
-*.log
-*.sql
-*.sqlite
-
-# Environment variables
-.env
-
-# Local development
-local_settings.py
-
-# Project specific
-data/
 *.parquet
 *.feather
 *.h5
 *.hdf5
-# Data files
-data/*
-!data/.gitkeep
 
-# Output files
-output/*
+# ==========================================
+# OUTPUT / RESULTS
+# ==========================================
+output/
 !output/.gitkeep
 
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-*/.ipynb_checkpoints/*
+# ==========================================
+# LOGS AND DATABASES
+# ==========================================
+*.log
+*.sql
+
+# ==========================================
+# ENVIRONMENT VARIABLES
+# ==========================================
+.env
+
+# ==========================================
+# LOCAL DEVELOPMENT FILES
+# ==========================================
+local_settings.py
+
+# ==========================================
+# TEST / CI / COVERAGE
+# ==========================================
+.coverage
+htmlcov/
+pytest_cache/
+*.cover
+*.py,cover
+.cache/
+nosetests.xml
+coverage.xml
+*.lcov
