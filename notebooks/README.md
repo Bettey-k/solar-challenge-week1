@@ -1,55 +1,84 @@
-#  Notebooks – Solar Challenge Week 1
+# 🧠 Exploratory Data Analysis (EDA) – Solar Data Discovery
 
-This folder contains all Jupyter notebooks created for **Task 2: Data Profiling, Cleaning, and Exploratory Data Analysis (EDA)**.  
-Each notebook focuses on one country's solar dataset and follows the same analysis structure defined in the project rubric.
-
----
-
-## 📘 Notebook Overview
-
-| Notebook | Description | Branch |
-|-----------|--------------|--------|
-| **benin_eda.ipynb** | Full exploratory data analysis for the **Benin** dataset. Includes data profiling (`df.describe()` and missing values), outlier detection using Z-scores, cleaning of negative irradiance values, and multiple visual analyses (time-series, correlation, wind distribution, temperature–humidity relationships, and bubble chart). | `eda-benin` |
-| **sierra_leone_eda.ipynb** | (To be added) – EDA for the **Sierra Leone** dataset following the same structure as Benin. | `eda-sierra` |
-| **togo_eda.ipynb** | (To be added) – EDA for the **Togo** dataset following the same structure as Benin. | `eda-togo` |
+This folder contains all the **Exploratory Data Analysis (EDA)** notebooks for the **KAIM / 10 Academy Solar Data Discovery Challenge**.  
+Each notebook explores solar radiation and environmental parameters for one country: **Benin**, **Sierra Leone**, and **Togo**.
 
 ---
 
-##  Standard EDA Workflow
+## 🌍 Purpose of the EDA
 
-Each notebook follows these steps:
+The goal of this analysis is to:
+1. **Understand** the characteristics of solar irradiance and weather parameters across regions.  
+2. **Clean** the data by handling missing values and outliers.  
+3. **Explore relationships** between solar variables (GHI, DNI, DHI, Tamb, RH, WS, etc.).  
+4. **Visualize** patterns and trends across time to identify potential for solar power generation.  
+5. **Generate insights** for each country to support future dashboard and ranking analysis.
 
-1. **Data Profiling**
-   - Summary statistics using `df.describe()`
-   - Missing-value report using `df.isna().sum()`
+---
 
-2. **Data Cleaning**
-   - Handle invalid or negative irradiance values (`GHI`, `DNI`, `DHI`)
-   - Impute missing values with median
-   - Compute and filter outliers using Z-scores
+## 📘 Available Notebooks
 
-3. **Time-Series Analysis**
-   - Plot `GHI`, `DNI`, `DHI`, and `Tamb` against timestamps
-   - Observe daily and seasonal solar trends
+| Notebook | Description |
+|-----------|-------------|
+| **`benin_eda.ipynb`** | Step-by-step profiling, cleaning, and visualization for Benin dataset. Includes time-series, correlations, humidity–temperature relationships, and cleaning impact. |
+| **`sierra_leone_eda.ipynb`** | Similar pipeline for Sierra Leone dataset. Analyzes irradiance patterns and how humidity affects solar radiation. |
+| **`togo_eda.ipynb`** | Full EDA for Togo dataset focusing on temperature fluctuations, wind speed, and irradiance intensity. |
+| **`interim_summary.ipynb`** | Aggregates cleaned results from all three countries, computes summary tables, and generates cross-country comparison plots. |
 
-4. **Correlation & Relationship Analysis**
-   - Heatmap of `GHI`, `DNI`, `DHI`, `TModA`, `TModB`
-   - Scatter plots (`WS` vs `GHI`, `RH` vs `Tamb`)
-   - Bubble chart: `GHI` vs `Tamb` with bubble size = `RH`
+---
 
-5. **Wind & Distribution Analysis**
-   - Histograms of `GHI`, `DNI`, `Tamb`, and `WS`
-   - Wind direction histogram (or wind rose)
+## ⚙️ How to Run the Notebooks
 
-6. **Cleaning Impact**
-   - Compare average `ModA` & `ModB` before and after cleaning events
+### 1️⃣ Activate Environment
+```bash
+# From project root
+.venv\Scripts\activate   # Windows
+# or
+source .venv/bin/activate   # macOS / Linux
+  2️⃣ Launch Jupyter
+jupyter notebook notebooks/
 
+  3️⃣ Open and Run
 
+Open one notebook (e.g. benin_eda.ipynb) → click “Run All”.
+Ensure that you have the cleaned or raw dataset for that country inside /data/.
 
+🧩 EDA Workflow (Summary)
 
-##  Notes
+Load Data → using src.data_cleaning.load_data()
 
-- Cleaned datasets are saved locally in `data/<country>_clean.csv` but **not committed** to GitHub (as specified in `.gitignore`).
-- Each notebook can be executed independently after installing requirements with:
-  ```bash
-  pip install -r requirements.txt
+Profile & Describe → df.describe(), df.isna().sum()
+
+Clean Data → fill NaNs with median; remove outliers (|Z| > 3)
+
+Visualize Trends → time-series for GHI, DNI, DHI, Tamb
+
+Analyze Correlations → heatmap of solar variables
+
+Cleaning Impact → compare ModA & ModB before/after cleaning
+
+Distributions → histograms for irradiance, scatter for WS vs GHI
+
+Temperature–Humidity → scatter plots and bubble charts
+
+Save Results → export cleaned data as data/<country>_clean.csv
+
+🧠 Tools Used
+
+pandas, numpy → data cleaning
+
+matplotlib, seaborn → visualization
+
+scipy.stats → Z-score filtering
+
+Jupyter Notebook → documentation & exploration
+
+🏁 Key Outcomes
+
+Clean, validated datasets for all three countries.
+
+Identified links between temperature, humidity, and solar performance.
+
+Produced visuals for irradiance distribution and correlations.
+
+Prepared data for cross-country comparison and dashboards.
