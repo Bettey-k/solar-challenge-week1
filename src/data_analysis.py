@@ -1,47 +1,14 @@
-"""
-data_analysis.py
-----------------
-Reusable functions for descriptive statistics, correlations,
-and visualization in the Solar Data Discovery project.
-
-"""
-
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+
 def summarize_solar_data(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Generate descriptive statistics for key solar metrics.
-
-    Parameters
-    ----------
-    df : pd.DataFrame
-        Cleaned solar dataset.
-
-    Returns
-    -------
-    pd.DataFrame
-        Summary statistics (count, mean, std, min, max).
-    """
+    """Generate descriptive statistics."""
     return df[["GHI", "DNI", "DHI", "Tamb", "RH", "WS"]].describe()
 
 
 def plot_correlation_heatmap(df: pd.DataFrame, title: str = "Solar Variable Correlations"):
-    """
-    Plot a heatmap of correlations among solar variables.
-
-    Parameters
-    ----------
-    df : pd.DataFrame
-        Cleaned solar dataset.
-    title : str
-        Title for the plot.
-
-    Returns
-    -------
-    None
-    """
     plt.figure(figsize=(6, 5))
     sns.heatmap(df.corr(), annot=True, cmap="YlOrBr", fmt=".2f")
     plt.title(title)
