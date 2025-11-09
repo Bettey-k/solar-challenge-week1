@@ -1,104 +1,47 @@
-# ==========================================
-# PYTHON & PROJECT CONFIG
-# ==========================================
+# ===========================
+# OS / Tooling
+# ===========================
+.DS_Store
+Thumbs.db
+.vscode/
 
-# Python cache and compiled files
+# ===========================
+# Python
+# ===========================
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-
-# Build and packaging
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# ==========================================
-# VIRTUAL ENVIRONMENTS
-# ==========================================
+*.pyc
 .venv/
 venv/
-env/
-ENV/
+.env
 
-# ==========================================
-# IDE / OS FILES
-# ==========================================
-.vscode/*
-!.vscode/settings.json
-.idea/
-.DS_Store
-
-# ==========================================
-# JUPYTER NOTEBOOKS
-# ==========================================
-# ✅ Keep notebooks visible but ignore checkpoints
+# ===========================
+# Jupyter
+# ===========================
 .ipynb_checkpoints/
-*/.ipynb_checkpoints/*
+!notebooks/*.ipynb       # ✅ Allow notebooks to be committed
 
-# ==========================================
-# DATA FILES (Keep Local Only)
-# ==========================================
-# Hide all raw and cleaned data
+# ===========================
+# Data (never commit raw data)
+# ===========================
 data/
-!data/.gitkeep
-
-# Common data formats
+!data/.gitkeep           # keep folder structure but ignore data files
 *.csv
-*.json
-*.xlsx
-*.xls
-*.db
-*.sqlite
 *.parquet
-*.feather
-*.h5
-*.hdf5
 
-# ==========================================
-# OUTPUT / RESULTS
-# ==========================================
+# ===========================
+# Reports & artifacts
+# ===========================
+*.pdf
+*.svg
+
+# ✅ Allow PNG plots and visuals (for grading)
+!output/*.png
 output/
 !output/.gitkeep
 
-# ==========================================
-# LOGS AND DATABASES
-# ==========================================
-*.log
-*.sql
-
-# ==========================================
-# ENVIRONMENT VARIABLES
-# ==========================================
-.env
-
-# ==========================================
-# LOCAL DEVELOPMENT FILES
-# ==========================================
-local_settings.py
-
-# ==========================================
-# TEST / CI / COVERAGE
-# ==========================================
+# ===========================
+# Coverage / Test Cache
+# ===========================
 .coverage
 htmlcov/
-pytest_cache/
-*.cover
-*.py,cover
-.cache/
-nosetests.xml
-coverage.xml
-*.lcov
+.pytest_cache/

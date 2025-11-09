@@ -1,119 +1,130 @@
-# Solar Data Discovery Challenge
+# ☀️ Solar Data Discovery – KAIM / 10 Academy Week 1
 
-This repository contains the code and analysis for the Solar Data Discovery Challenge, focusing on analyzing solar farm data from Benin, Sierra Leone, and Togo.
+### 👩🏽‍💻 Author: Betelhem Kibret Getu  
+**Program:** KAIM / 10 Academy – Week 1  
+**Challenge:** Solar Data Discovery  
+**Repository:** [https://github.com/Bettey-k/solar-challenge-week1](https://github.com/Bettey-k/solar-challenge-week1)
 
-## Project Structure
+---
 
-```
-├── .github/
-│   └── workflows/         # GitHub Actions workflows
-├── data/                  # Data files (ignored by git)
-├── notebooks/             # Jupyter notebooks for analysis
-├── scripts/               # Utility scripts
-├── src/                   # Source code
-├── tests/                 # Test files
-├── .gitignore             # Git ignore file
-├── README.md              # This file
-└── requirements.txt       # Python dependencies
-```
+## 🌍 Project Overview
+This project focuses on **cleaning, profiling, and analyzing solar energy datasets** from three West African countries — **Benin**, **Sierra Leone**, and **Togo**.  
+It was developed as part of **10 Academy’s KAIM Week 1 Challenge** to demonstrate skills in:
+- Data cleaning and preprocessing  
+- Exploratory Data Analysis (EDA)  
+- Python modularization and documentation  
+- Version control and CI/CD automation
 
-## Getting Started
+---
 
-### Prerequisites
+## 🧩 Objectives
+1. Load, profile, and clean raw solar datasets.  
+2. Handle missing values and remove outliers using Z-score filtering.  
+3. Perform descriptive statistics and correlation analysis.  
+4. Visualize solar patterns across time and environmental variables.  
+5. Build reusable Python modules for data cleaning and analysis.  
+6. Maintain version control best practices (branches, commits, CI tests).
 
-- Python 3.11
-- Git
-- Virtual environment (venv or conda)
+---
 
-### Setup
+## 🛠️ Setup Instructions
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/bettey-k/solar-challenge-week1.git
-   cd solar-challenge-week1
-   ```
-
-2. **Create and activate a virtual environment**
-
-   **Using venv:**
-   ```bash
-   python -m venv .venv
-   # On Windows:
-   .\.venv\Scripts\activate
-   # On macOS/Linux:
-   # source .venv/bin/activate
-   ```
-
-   **Using conda:**
-   ```bash
-   conda create -n solar-env python=3
-   conda activate solar-env
-   ```
-
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Set up pre-commit hooks (optional but recommended)**
-   ```bash
-   pre-commit install
-   ```
-
-## Development Workflow
-
-1. Create a new branch for your feature or bugfix:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-2. Make your changes and commit them with a descriptive message:
-   ```bash
-   git add .
-   git commit -m "feat: add new analysis for solar data"
-   ```
-
-3. Push your changes to the remote repository:
-   ```bash
-   git push -u origin feature/your-feature-name
-   ```
-
-4. Create a pull request on GitHub to merge your changes into the main branch.
-
-## Running Tests
-
-Run the test suite using pytest:
-
+### 1️⃣ Clone and create environment
 ```bash
-pytest tests/
-```
+git clone https://github.com/Bettey-k/solar-challenge-week1.git
+cd solar-challenge-week1
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# macOS/Linux
+source .venv/bin/activate
 
-To run tests with coverage report:
+2️⃣ Install dependencies
+pip install -r requirements.txt
 
-```bash
-pytest --cov=src tests/
-```
+3️⃣ Run tests
+pytest -q
 
-## Code Style
 
-This project uses:
-- Black for code formatting
-- isort for import sorting
-- flake8 for linting
+You should see something like:
 
-To format and check your code:
+2 passed in 0.5s
 
-```bash
-black .
-isort .
-flake8
-```
+4️⃣ Launch Jupyter Notebooks
+jupyter notebook notebooks/
 
-## License
+5️⃣ Optional: Run functions directly
+python src/data_cleaning.py
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
+or import in notebooks:
 
-- [10 Academy](https://www.10academy.org/) for providing this challenge
-- Solar Radiation Measurement Data (https://www.renewables.ninja/)for the dataset
+from src.data_cleaning import clean_solar_data
+
+🧱 Repository Structure
+solar-challenge-week1/
+│
+├── .github/workflows/ci.yml        → Continuous Integration (pytest + flake8)
+├── src/                            → Modular code (cleaning + analysis)
+├── notebooks/                      → EDA and visual analysis per country
+├── tests/                          → Unit tests for validation
+├── scripts/                        → Placeholder for future automation
+├── output/                         → Generated figures and summaries
+├── data/                           → Local data (ignored in .gitignore)
+├── requirements.txt                → Project dependencies
+└── README.md                       → Main documentation (this file)
+
+📊 Steps in the Project
+Step 1. Environment & Git Setup
+
+Created virtual environment and requirements file.
+
+Added CI workflow in .github/workflows/ci.yml to verify builds.
+
+Initialized repository with .gitignore and folder structure.
+
+Step 2. Data Profiling & Cleaning
+
+Loaded raw datasets from the data/ folder.
+
+Used functions in src/data_cleaning.py to:
+
+Replace missing values with median.
+
+Remove outliers using Z-scores.
+
+Validate column consistency.
+
+Step 3. Exploratory Data Analysis (EDA)
+
+Conducted analysis in separate notebooks:
+
+benin_eda.ipynb
+
+sierra_leone_eda.ipynb
+
+togo_eda.ipynb
+
+Visualized time-series, correlations, humidity-temperature relations, and cleaning impact.
+
+Step 4. Modularization
+
+Abstracted core cleaning and visualization functions into:
+
+src/data_cleaning.py
+
+src/data_analysis.py
+
+Added detailed docstrings for clarity and reusability.
+
+Step 5. Testing & CI
+
+Added tests/test_cleaning.py to verify functions.
+
+Enabled GitHub Actions to run automatic tests.
+
+Step 6. Documentation
+
+Added detailed README files across folders.
+
+Ensured clear structure and instructions for reproducibility.
