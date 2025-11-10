@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 def clean_solar_data(df: pd.DataFrame) -> pd.DataFrame:
     """Clean solar dataset."""
     df = df.copy()
