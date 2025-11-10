@@ -117,8 +117,7 @@ st.pyplot(fig)
 st.markdown("---")
 st.subheader("💡 Observations / Insights")
 st.markdown("""
-- Countries with **higher average GHI** have stronger solar potential.  
-- The **boxplot spread** indicates variability and consistency in solar exposure.  
-- **ANOVA** helps verify if observed differences are statistically meaningful.  
+- Countries with **higher average GHI** have stronger solar potential.
+- The **boxplot spread** indicates variability and consistency in solar exposure.
+- **ANOVA** helps verify if observed differences are statistically meaningful.
 """)
-
